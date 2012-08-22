@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Webshopnew</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav>
+  <tr class="menu2">
+    <td class="logo"><%= image_tag("images.jpeg") %></td>
+    <td class="menu2"><%= link_to 'Products',    'products' %></td>
+    <td class="menu2"><%= link_to 'Reviews',    'reviews' %></td>
+    <td class="menu2"><%= link_to 'Inicio', 'http://localhost:3000' %></td>
+  </tr>
+</nav>
+</body>
+</html>

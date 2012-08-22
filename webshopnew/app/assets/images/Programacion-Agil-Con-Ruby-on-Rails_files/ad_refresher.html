@@ -1,0 +1,88 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="ad_refresher_data/beacon.js" async=""></script><script type="text/javascript">
+      if (!Array.prototype.map) {
+        Array.prototype.map = function(fn, scope) {
+          var accum = [], scope = scope || null;
+          for (var i = 0; i < this.length; i++)  {
+            accum.push(fn.call(scope, this[i], i));
+          }
+          return accum;
+        }
+      }
+      var params = {}; //hash for url fragments
+      var adName; //name of the ad unit
+      var parts = window.location.href.match(/[#&]([^&#=]+)=([^&#=]+)/g);
+      for (var i = 0; i < parts.length; i++) {
+        var keyVal = parts[i].substr(1).split('=');
+        params[keyVal[0]] = unescape(keyVal[1]);
+      }
+
+
+      adName = params['ad_unit'];
+      if(adName) {
+        var writeScript = function(src) {
+          document.write('\x3Cscript type="text/javascript" src="'+src+'">\x3C/script>')
+        };
+
+        var adDivId = 'refresh-ad'; //id of the div we're going to stuff the ad into.
+        writeScript('http://www.googletagservices.com/tag/js/gpt.js');
+      }
+    </script><script type="text/javascript" src="Programacion-Agil-Con-Ruby-on-Rails_files/gpt.js"></script>
+
+    <script type="text/javascript">
+      if(adName) {
+        for (var key in top.Scribd.Ads.attributes) {
+          var value = top.Scribd.Ads.attributes[key];
+          if( value instanceof Array) {
+            value = value.map(function(f){return f + '';});
+          }
+          else {
+            value = value + '';
+          }
+          googletag.pubads().setTargeting(key, value);
+        } 
+      }
+    </script>
+
+    <script type="text/javascript">
+      if(adName) {
+        googletag.pubads().set("adsense_page_url", top.location.href);
+        var size = adName.match(/.*_(\d+)x(\d+)$/)
+          .slice(1)
+          .map(function(f){return parseInt(f);});
+        googletag.defineSlot('/1024966/' + adName, size, adDivId).addService(googletag.pubads());
+      }
+    </script>
+
+    <script type="text/javascript">
+      if(adName) {
+        googletag.pubads().enableSyncRendering();
+        googletag.enableServices();
+      }
+    </script><script type="text/javascript" src="Programacion-Agil-Con-Ruby-on-Rails_files/google_ads_gpt.js"></script>
+  <script src="Programacion-Agil-Con-Ruby-on-Rails_files/osd.js" type="text/javascript"></script><script src="ad_refresher_data/page_parser.js" type="text/javascript"></script></head>
+  <body style="background-color:transparent;">
+    <div id="refresh-ad">
+      <script type="text/javascript">
+        if (adName) {
+          top.Scribd.Ads.RefreshUnit.get[adName].iframeLoaded(); 
+          googletag.display(adDivId);
+       }
+      </script><script type="text/javascript" src="ad_refresher_data/ads"></script><div id="refresh-ad_ad_container"><!--  Rubicon Project Tag -->
+<!--  Site: Scribd.com   Zone: Doc_Sideboard_HalfPage_Pinned_300x600   Size: Medium Rectangle  -->
+<script language="JavaScript" type="text/javascript">
+var rp_account   = '8989';
+var rp_site      = '15071';
+var rp_zonesize  = '34596-15';
+var rp_adtype    = 'js';
+var rp_smartfile = '[SMART FILE URL]';
+</script>
+<script type="text/javascript" src="ad_refresher_data/8989.js"></script><script type="text/javascript" src="ad_refresher_data/34596-15.js"></script><iframe id="cb8dc310" name="cb8dc310" src="ad_refresher_data/afr.html" framespacing="0" frameborder="no" height="250" scrolling="no" width="300"></iframe><script>var _comscore = _comscore || []; _comscore.push({ c1: "8", c2: "6135404", c3: "15", c4: "15071", c10: "3237533" }); (function() { var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); })();</script><script defer="defer" type="text/javascript" src="ad_refresher_data/alice.js"></script><div style="height:0px; width:0px; overflow:hidden"><iframe src="ad_refresher_data/emily.html" marginwidth="0" marginheight="0" style="height:0px; width:0px" frameborder="0" height="0" scrolling="NO" width="0"></iframe></div>
+
+</div>
+
+    </div>
+  
+
+</body></html>
