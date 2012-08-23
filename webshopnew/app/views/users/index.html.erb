@@ -1,0 +1,18 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<%= render @users %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

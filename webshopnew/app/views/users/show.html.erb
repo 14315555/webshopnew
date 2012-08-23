@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+<p>
+  <% #r = Reviews.where(:user_id=>@user.id) %>
+  <% #r.each do |review| %>
+      <%#= render @reviews %>
+  <% #end %>
+<table>
+  <h1><%= @user.first_name %>'s reviews</h1>
+  <tr>
+    <th>Summary</th>
+    <th>Description</th>
+    <th>Rating</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%= puts  %>
+</table>
+<br />
+
+</p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
