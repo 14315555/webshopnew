@@ -15,10 +15,6 @@
   <%= @user.email %>
 </p>
 <p>
-  <% #r = Reviews.where(:user_id=>@user.id) %>
-  <% #r.each do |review| %>
-      <%#= render @reviews %>
-  <% #end %>
 <table>
   <h1><%= @user.first_name %>'s reviews</h1>
   <tr>
@@ -29,10 +25,13 @@
     <th></th>
     <th></th>
   </tr>
-  <%= puts  %>
 </table>
 <br />
+    <%# Usar una única llamada para renderizar la lista, no usar la iteración %>
+    <% @user.reviews.each do |review|%>
+    <%= render review %>
+    <br/>
+    <% end %>
 
-</p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
