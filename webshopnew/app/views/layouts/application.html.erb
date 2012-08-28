@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if logged_in? %>
+<p class="menu2"><%= "Usuario: email:#{current_user.email} | nombre:#{current_user.first_name}" %></p>
+    <% else %>
+<p>Haz login <%= link_to 'aquí', new_session_path %></p>
+    <% end %>
 <header class="menu2">
   <%=render 'layouts/menu' %>
 </header>

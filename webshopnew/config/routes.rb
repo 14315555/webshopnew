@@ -1,9 +1,29 @@
 Webshopnew::Application.routes.draw do
-  resources :users
+
+  get "login" => "sessions#new", :as => "new_session"
+  get "logout" => "sessions#destroy", :as => "logout"
+
+  get "signup" => "users#new", :as => "new_user"
+
+  root :to => "users#index"
 
   resources :reviews
 
-  resources :products
+  resources :users , :except => [:new]
+
+  resources :products do
+    member do
+      put 'publish'
+      put 'unpublish'
+    end
+    collection do
+      put 'public_all'
+      put 'unpublic_all'
+    end
+    resources :reviews, :except => [:show, :destroy]
+  end
+
+  resources :sessions , :except => [:new]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

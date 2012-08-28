@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+  before_filter :login_required, :only => [:logout]
+
   def index
     @users = User.all
 

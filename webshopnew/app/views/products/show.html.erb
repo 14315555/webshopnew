@@ -24,6 +24,18 @@
   <b>Price:</b>
   <%= @product.price %>
 </p>
+  <br />
+<table>
+  <tr>
+    <th>Summary</th>
+    <th>Description</th>
+    <th>Rating</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%= render @product.reviews %>
+</table>
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

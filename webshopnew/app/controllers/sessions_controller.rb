@@ -1,23 +1,23 @@
-class UsersController < ApplicationController
+class SessionsController < ApplicationController
+
+  before_filter :login_required, :only => [:logout]
 
   def new
   end
 
   def create
-    user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to root_url, :notice => "Logged in!"
+    @user = User.find_by_email(params[:email])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to products_path, :notice => "Logged in!"
     else
-      flash.now.alert = "Invalid email or password"
+      flash.now.alert = "Error al introducir email o password"
       render "new"
     end
   end
 
   def destroy
-      session[:user_id] = nil
-      redirect_to root_url, :notice => "Logged out!"
-    end
-
-
+    session[:user_id] = nil
+    redirect_to root_url, :notice => "Logged out!"
+  end
 end

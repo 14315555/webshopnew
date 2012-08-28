@@ -15,6 +15,7 @@
   <%= @user.email %>
 </p>
 <p>
+  <br />
 <table>
   <h1><%= @user.first_name %>'s reviews</h1>
   <tr>
@@ -25,13 +26,9 @@
     <th></th>
     <th></th>
   </tr>
+  <%= render @user.reviews %>
+  <br/>
 </table>
-<br />
-    <%# Usar una única llamada para renderizar la lista, no usar la iteración %>
-    <% @user.reviews.each do |review|%>
-    <%= render review %>
-    <br/>
-    <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

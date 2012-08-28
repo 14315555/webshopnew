@@ -13,8 +13,8 @@
  */
 body, p, ol, ul, td {
     font-family: verdana, arial, helvetica, sans-serif;
-    font-size:   34px;
-    line-height: 18px;
+    font-size:   18px;
+    line-height: 14px;
 }
 
 pre {
@@ -33,6 +33,10 @@ a:hover { color: #fff; background-color:#000; }
     display: table;
 }
 
+h1{
+    font-size: 130%;
+
+}
 .errorExplanation {
     width: 400px;
     border: 2px solid red;
@@ -97,7 +101,7 @@ a:hover { color: #fff; background-color:#000; }
 .menu a, .menu a:visited, .menu a:active {
     font-weight: bold;
     color: black;
-    font-size: 110%;
+    font-size: 60%;
     text-decoration:none;
 }
 
@@ -116,7 +120,7 @@ a:hover { color: #fff; background-color:#000; }
     list-style: none;
     border-top: 5px solid #2f4f4f;
     border-bottom: 1px solid grey;
-    font-size:34em;
+    font-size:20em;
 }
 
 .menu2 tr td {
@@ -130,7 +134,7 @@ a:hover { color: #fff; background-color:#000; }
 .menu2 a, .menu a:visited, .menu a:active {
     font-weight: bold;
     color: #a9a9a9;
-    font-size: 160%;
+    font-size: 80%;
     font-color: black;
     text-decoration:none;
 }
